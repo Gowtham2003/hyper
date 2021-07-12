@@ -10,47 +10,36 @@
     {
       "from": "./build/${os}/",
       "to": "./bin/",
-      "filter": [
-        "hyper*"
-      ]
+      "filter": ["hyper*"]
     }
   ],
   "linux": {
     "category": "TerminalEmulator",
     "target": [
       {
+        "target": "tar.xz",
+        "arch": ["arm64", "armv7l"]
+      },
+      {
+        "target": "pacman",
+        "arch": ["arm64", "armv7l"]
+      },
+      {
         "target": "deb",
-        "arch": [
-          "x64",
-          "arm64"
-        ]
+        "arch": ["arm64", "armv7l"]
       },
       {
         "target": "AppImage",
-        "arch": [
-          "x64",
-          "arm64"
-        ]
+        "arch": ["arm64", "armv7l"]
       },
       {
         "target": "rpm",
-        "arch": [
-          "x64",
-          "arm64"
-        ]
-      },
-      {
-        "target": "snap",
-        "arch": [
-          "x64"
-        ]
+        "arch": ["arm64", "armv7l"]
       }
     ]
   },
   "win": {
-    "target": [
-      "nsis"
-    ],
+    "target": ["nsis"],
     "rfc3161TimeStampServer": "http://timestamp.comodoca.com"
   },
   "nsis": {
@@ -62,10 +51,7 @@
   "mac": {
     "target": {
       "target": "default",
-      "arch": [
-        "x64",
-        "arm64"
-      ]
+      "arch": ["x64", "arm64"]
     },
     "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
     "category": "public.app-category.developer-tools",
@@ -86,9 +72,7 @@
           "CFBundleTypeName": "UnixExecutables",
           "CFBundleTypeRole": "Shell",
           "LSHandlerRank": "Alternate",
-          "LSItemContentTypes": [
-            "public.unix-executable"
-          ]
+          "LSItemContentTypes": ["public.unix-executable"]
         }
       ],
       "NSAppleEventsUsageDescription": "An application in Hyper wants to use AppleScript.",
@@ -125,8 +109,6 @@
   },
   "protocols": {
     "name": "ssh URL",
-    "schemes": [
-      "ssh"
-    ]
+    "schemes": ["ssh"]
   }
 }
